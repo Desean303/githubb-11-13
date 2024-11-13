@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+int guess;
+int counter = 0;
+srand(time(NULL));
+cout << ("I've thought of a number, 1-100") << endl;
+int num = rand() % 100;
+
+do {
+counter++;
+cin >> guess;
+if (guess > 100 || guess < 1)
+cout << guess << " " << "is not 1-100 " << endl;
+else if (abs(num - guess) < 2)
+cout << "white hot" << endl;
+else if (abs(num - guess) < 12)
+cout << "quite hot" << endl;
+else if (abs(num - guess) < 30)
+cout << "tepid" << endl;
+else if (abs(num - guess) < 45)
+cout << "cool" << endl;
+else if (abs(num - guess) < 60)
+cout << "cold" << endl;
+else if (abs(num - guess) > 60)
+cout << "icy" << endl;
+} while (guess != num);
+cout << "it took you " << counter << " guesses." << endl;
+
+ 
+}
